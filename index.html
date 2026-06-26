@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>spanish_buddy — terminal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="crt">
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <div class="term">
+      <div class="titlebar">
+        <span class="rule">────────────────────────────────────</span>
+        <span class="brand">SPANISH_BUDDY</span>
+        <span class="rule">────────────────────────────────────</span>
+      </div>
+
+      <div class="level-rack" id="levelRack">
+        <span class="level-label">mode:</span>
+        <button class="level-opt" data-level="beginner">[1] beginner</button>
+        <button class="level-opt" data-level="intermediate">[2] intermediate</button>
+        <button class="level-opt" data-level="advanced">[3] advanced</button>
+      </div>
+
+      <main class="thread" id="thread"></main>
+
+      <div class="banner" id="offlineBanner" hidden>
+        <span class="banner-tag">[ERROR]</span> <span id="offlineDetail">connection failed</span>
+      </div>
+
+      <form class="composer" id="composer">
+        <label class="prompt-prefix" for="messageInput" id="promptPrefix">you@buddy:~$</label>
+        <input
+          type="text"
+          id="messageInput"
+          autocomplete="off"
+          autocapitalize="off"
+          spellcheck="false"
+          disabled
+        />
+      </form>
+
+      <div class="statusbar" id="statusbar">
+        <span class="seg seg-name" id="segName">mateo@spanish-buddy</span>
+        <span class="seg seg-mode" id="segMode">mode: intermediate</span>
+        <span class="seg seg-conn" id="segConn">● connecting</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
